@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -33,18 +33,13 @@ namespace workspacer.Bar.Widgets
                     return Parts(Part(currentBatteryCharge.ToString("#0%")));
                 }
             }
-            else
-            {
-                return Parts(currentBatteryCharge.ToString("#0%"));
-            }
-        }
 
-        public override void Initialize()
-        {
-            _timer = new System.Timers.Timer(Interval);
-            _timer.Elapsed += (s, e) => Context.MarkDirty();
-            _timer.Enabled = true;
+            public override void Initialize()
+            {
+                _timer = new System.Timers.Timer(Interval);
+                _timer.Elapsed += (s, e) => Context.MarkDirty();
+                _timer.Enabled = true;
+            }
         }
     }
 }
-
